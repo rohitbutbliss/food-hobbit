@@ -6,8 +6,8 @@
     "start": "parcel index.html",
     "build": "parcel build index.html",
     "test": "jest",
-    "predeploy" : "npm run build",
-    "deploy" : "gh-pages -d dist"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "author": "Rohit Kumar",
   "license": "ISC",
