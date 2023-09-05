@@ -1,0 +1,24 @@
+{
+  "name": "food-hobbit",
+  "version": "1.0.0",
+  "description": "food app by rohit",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "author": "Rohit Kumar",
+  "license": "ISC",
+  "dependencies": {
+    "iconoir": "^6.11.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "serve": "^14.2.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.0.0",
+    "htmlnano": "2.0.3",
+    "parcel": "^2.9.3",
+    "process": "^0.11.10"
+  }
+}
