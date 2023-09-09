@@ -20,10 +20,10 @@ const Body = () => {
   const fetchData = async () => {
     let getRestaurantsList;
     try {
-      // let res = await fetch(
-      //   "https://cors-anywhere-gk19.onrender.com/" + CARD_API
-      // );
-      let res = await fetch(CARD_API);
+      let res = await fetch(
+        "https://cors-anywhere-gk19.onrender.com/" + CARD_API
+      );
+      // let res = await fetch(CARD_API);
       res = await res.json();
 
       console.log(res);
