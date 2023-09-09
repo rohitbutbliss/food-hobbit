@@ -4,6 +4,7 @@ import { CARD_API } from "../utils/constants";
 import ShimmerUI from "./ShimmerUI";
 import BodyTop from "./BodyTop";
 import NoResult from "./NoResult";
+import { MOCK_RESTAURANT_DATA } from "../utils/mockData";
 
 const Body = () => {
   // declaring all the state variables required
@@ -26,8 +27,6 @@ const Body = () => {
       // let res = await fetch(CARD_API);
       res = await res.json();
 
-      console.log(res);
-
       getRestaurantsList = res?.data?.cards.reduce((requiredCard, card) => {
         return card?.card?.card?.id === "restaurant_grid_listing"
           ? card?.card?.card?.gridElements.infoWithStyle?.restaurants
@@ -37,7 +36,7 @@ const Body = () => {
       getRestaurantsList = [];
     }
 
-    return getRestaurantsList || [];
+    return getRestaurantsList || MOCK_RESTAURANT_DATA;
   };
 
   // This method will update the list based on search query and filter applied
