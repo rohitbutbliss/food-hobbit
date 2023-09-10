@@ -15,7 +15,7 @@ header {
   width: 150px;
 }
 
-.logo > img {
+.logo img {
   width: 100%;
 }
 
@@ -114,7 +114,7 @@ input:focus {
     justify-content: space-around;
   }
 
-  .nav-items > ul > li {
+  .nav-items > ul li {
     flex-direction: column;
   }
 }

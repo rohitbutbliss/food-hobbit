@@ -15,8 +15,6 @@ const Body = () => {
   const [restaurantList, setRestaurantList] = useState([]);
   const [restaurantCount, setRestaurantCount] = useState(0);
 
-  console.log("body rendered");
-
   // This method is fetching restaurant data from API and converting it to list
   const fetchData = async () => {
     let getRestaurantsList;
@@ -33,7 +31,7 @@ const Body = () => {
           : requiredCard;
       }, undefined);
     } catch (error) {
-      getRestaurantsList = getRestaurantsList || MOCK_RESTAURANT_DATA;
+      getRestaurantsList = MOCK_RESTAURANT_DATA;
     }
 
     return getRestaurantsList || MOCK_RESTAURANT_DATA;
@@ -86,27 +84,25 @@ const Body = () => {
   }, [currentSearchInputText, isFiltered]);
 
   return (
-    <main>
-      <div className="body">
-        {initialRestaurantList.length === 0 ? (
-          <ShimmerUI />
-        ) : (
-          <>
-            <BodyTop
-              restaurantCount={restaurantCount}
-              handleInputEnter={handleSearchEnter}
-              handleFilterClick={handleFilterClick}
-              isFiltered={isFiltered}
-            />
-            {restaurantList.length === 0 ? (
-              <NoResult />
-            ) : (
-              <RestaurantCardContainer restaurantList={restaurantList} />
-            )}
-          </>
-        )}
-      </div>
-    </main>
+    <>
+      {initialRestaurantList.length === 0 ? (
+        <ShimmerUI />
+      ) : (
+        <>
+          <BodyTop
+            restaurantCount={restaurantCount}
+            handleInputEnter={handleSearchEnter}
+            handleFilterClick={handleFilterClick}
+            isFiltered={isFiltered}
+          />
+          {restaurantList.length === 0 ? (
+            <NoResult />
+          ) : (
+            <RestaurantCardContainer restaurantList={restaurantList} />
+          )}
+        </>
+      )}
+    </>
   );
 };
 

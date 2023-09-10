@@ -41,7 +41,7 @@ h3 {
 }
 
 .app > * {
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,6 +50,12 @@ h3 {
 .app > * > * {
   width: 100%;
   max-width: 1300px;
+}
+
+a {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 770px) {

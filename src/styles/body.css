@@ -1,7 +1,5 @@
 main {
   background-color: #f4f4f4;
-  width: 100vw;
-  max-width: 100vw;
 }
 
 .body {
@@ -51,6 +49,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  cursor: pointer;
 }
 
 .food-image-container {
