@@ -33,7 +33,7 @@ const Body = () => {
           : requiredCard;
       }, undefined);
     } catch (error) {
-      getRestaurantsList = [] || MOCK_RESTAURANT_DATA;
+      getRestaurantsList = getRestaurantsList || MOCK_RESTAURANT_DATA;
     }
 
     return getRestaurantsList || MOCK_RESTAURANT_DATA;
