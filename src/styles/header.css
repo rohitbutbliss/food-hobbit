@@ -58,6 +58,7 @@ header {
 .location,
 .search {
   padding: 10px;
+  cursor: pointer;
 }
 
 .search {

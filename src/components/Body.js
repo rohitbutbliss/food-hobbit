@@ -24,6 +24,7 @@ const Body = () => {
       );
       // let res = await fetch(CARD_API);
       res = await res.json();
+      console.log(res);
 
       getRestaurantsList = res?.data?.cards.reduce((requiredCard, card) => {
         return card?.card?.card?.id === "restaurant_grid_listing"
