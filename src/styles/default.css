@@ -43,10 +43,6 @@
   pointer-events: none;
 }
 
-.modal-overlay h1 {
-  white-space: normal;
-}
-
 .modal-overlay.active {
   visibility: visible;
   pointer-events: all;
@@ -62,7 +58,7 @@
     height: 0;
     width: 0;
   }
-  50% {
+  70% {
     height: 2px;
     width: 100vw;
   }
