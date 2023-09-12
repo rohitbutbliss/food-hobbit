@@ -18,19 +18,12 @@
   font-weight: normal;
 }
 
-.app.modal-active {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-}
-
 .app.modal-active * {
   pointer-events: none;
 }
 
 .modal-overlay {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -45,8 +38,11 @@
 
 .modal-overlay.active {
   visibility: visible;
-  pointer-events: all;
   animation: modal-overlay-opening 0.7s ease-in-out forwards;
+}
+
+.modal-overlay.active * {
+  pointer-events: all;
 }
 
 .modal-overlay.active .modal {
@@ -55,7 +51,7 @@
 
 @keyframes modal-overlay-opening {
   0% {
-    height: 0;
+    height: 2px;
     width: 0;
   }
   70% {
@@ -71,7 +67,7 @@
   0% {
     transform: scale(0);
   }
-  62.5% {
+  70% {
     transform: scale(0);
   }
   100% {

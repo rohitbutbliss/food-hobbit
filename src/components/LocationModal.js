@@ -2,9 +2,6 @@ const LocationModal = (props) => {
   const { isModalActive, updaterFunction } = props;
   return (
     <div
-      onClick={() => {
-        updaterFunction();
-      }}
       style={{}}
       className={isModalActive ? "modal-overlay active" : "modal-overlay"}
     >
@@ -31,6 +28,23 @@ const LocationModal = (props) => {
         <p style={{ textAlign: "center" }}>
           Please allow us location permission to use this feature
         </p>
+        <button
+          style={{
+            backgroundColor: "green",
+            color: "white",
+            border: "none",
+            width: "100%",
+            fontSize: "18px",
+            borderRadius: "6px",
+            padding: "10px",
+            cursor: "pointer",
+          }}
+          onClick={() => {
+            updaterFunction();
+          }}
+        >
+          Got it
+        </button>
       </div>
     </div>
   );
