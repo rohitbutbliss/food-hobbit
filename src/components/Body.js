@@ -1,10 +1,8 @@
 import RestaurantCardContainer from "./RestaurantCardContainer";
 import { useEffect, useState } from "react";
-import { CARD_API } from "../utils/constants";
 import ShimmerUI from "./ShimmerUI";
 import BodyTop from "./BodyTop";
 import NoResult from "./NoResult";
-import { MOCK_RESTAURANT_DATA } from "../utils/mockData";
 import { fetchList } from "../utils/FetchFunctions";
 
 const Body = () => {
@@ -20,6 +18,8 @@ const Body = () => {
   const fetchData = () => {
     const lat = Number(JSON.parse(localStorage.getItem("lat")));
     const lon = Number(JSON.parse(localStorage.getItem("lon")));
+    localStorage.removeItem("lat");
+    localStorage.removeItem("lon");
     return fetchList(lat, lon);
   };
 
