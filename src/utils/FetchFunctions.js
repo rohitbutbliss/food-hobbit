@@ -16,10 +16,10 @@ const fetchList = async (lat, lon) => {
         : requiredCard;
     }, undefined);
   } catch (error) {
-    getRestaurantsList = MOCK_RESTAURANT_DATA;
+    getRestaurantsList = [];
   }
 
-  return getRestaurantsList || MOCK_RESTAURANT_DATA;
+  return getRestaurantsList || [];
 };
 //api.ipgeolocation.io/ipgeo?apiKey=f7108121067647768e771fa850aa14a7
 

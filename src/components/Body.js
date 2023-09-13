@@ -8,6 +8,7 @@ import { fetchList } from "../utils/FetchFunctions";
 const Body = () => {
   // declaring all the state variables required
   const [initialRestaurantList, setInitialRestaurantList] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
   const [currentSearchInputText, setCurrentSearchInputText] = useState("");
   const [isFiltered, setIsFiltered] = useState(false);
 
@@ -18,6 +19,7 @@ const Body = () => {
   const fetchData = () => {
     const lat = Number(JSON.parse(localStorage.getItem("lat")));
     const lon = Number(JSON.parse(localStorage.getItem("lon")));
+
     localStorage.removeItem("lat");
     localStorage.removeItem("lon");
     return fetchList(lat, lon);
@@ -60,6 +62,7 @@ const Body = () => {
       setRestaurantList(newList);
       setInitialRestaurantList(newList);
       setRestaurantCount(newList.length);
+      setIsLoaded(true);
     };
     loadData();
   }, []);
@@ -71,7 +74,7 @@ const Body = () => {
 
   return (
     <>
-      {initialRestaurantList.length === 0 ? (
+      {!isLoaded ? (
         <ShimmerUI />
       ) : (
         <>

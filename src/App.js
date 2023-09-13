@@ -29,7 +29,9 @@ const AppLayout = () => {
         localStorage.setItem("lat", JSON.stringify(pos.coords.latitude));
         localStorage.setItem("lon", JSON.stringify(pos.coords.longitude));
       },
-      () => setIsModalActive(true)
+      () => {
+        setIsModalActive(true);
+      }
     );
   };
 
