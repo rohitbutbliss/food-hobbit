@@ -19,9 +19,6 @@ const Body = () => {
   const fetchData = () => {
     const lat = Number(JSON.parse(localStorage.getItem("lat")));
     const lon = Number(JSON.parse(localStorage.getItem("lon")));
-
-    localStorage.removeItem("lat");
-    localStorage.removeItem("lon");
     return fetchList(lat, lon);
   };
 
