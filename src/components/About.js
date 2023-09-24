@@ -1,11 +1,30 @@
-import Footer from "./Footer";
-import Header from "./Header";
+import { useEffect, useState } from "react";
+import User from "./User";
 
 const About = () => {
+  const [userList, setUserList] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const data = await fetch("https://api.github.com/users");
+      const json = await data.json();
+      setUserList(json);
+    })();
+  }, []);
+
   return (
-    <>
-      <h1 style={{ fontSize: "45px" }}>I am About Page</h1>
-    </>
+    <div
+      style={{
+        display: "flex",
+        gap: "20px",
+        flexWrap: "wrap",
+        justifyContent: "center",
+      }}
+    >
+      {userList.map((user) => (
+        <User userData={user} key={user.id} />
+      ))}
+    </div>
   );
 };
 
