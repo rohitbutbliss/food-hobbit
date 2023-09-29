@@ -15,7 +15,7 @@ const useRestaurantsList = (lat, lon) => {
       console.log(res);
 
       currentRestaurantsList = res?.data?.cards.reduce((requiredCard, card) => {
-        return card?.card?.card?.id === "restaurant_grid_listing"
+        return card?.card?.card?.id === "top_brands_for_you"
           ? card?.card?.card?.gridElements.infoWithStyle?.restaurants
           : requiredCard;
       }, undefined);
